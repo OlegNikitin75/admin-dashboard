@@ -1,0 +1,46 @@
+<header class="header">
+  <div class="header__inner flex-center-between">
+    <div>
+      <a class="logo" routerLink="">Инженерная графика</a>
+      <p
+        class="flex-center-between gap-5 cursor-pointer select-none pt-3"
+        (click)="isActiveSection = !isActiveSection"
+      >
+        Текущая активность Ваших студентов
+        <ng-container *ngIf="isActiveSection">
+          <img src="./assets/img/icons/chevron-down.svg" alt="" />
+        </ng-container>
+        <ng-container *ngIf="!isActiveSection">
+          <img src="./assets/img/icons/chevron-right.svg" alt="" />
+        </ng-container>
+      </p>
+    </div>
+
+    <div class="user-box flex-center-between gap-5">
+      <app-search></app-search>
+      <app-button class="btn--rounded">
+        <div class="relative flex-center-center">
+          <img src="./assets/img/icons/bell.svg" alt="icon" />
+          <span
+            *ngIf="isNotification"
+            class="absolute right-1.5 -top-1 block w-1.5 h-1.5 rounded-full bg-green-600"
+          ></span>
+        </div>
+      </app-button>
+      <app-button class="btn--rounded">
+        <div class="relative flex-center-center">
+          <img src="./assets/img/icons/chat-dots.svg" alt="icon" />
+          <span
+            *ngIf="isMessages"
+            class="absolute right-1.5 -top-1 block w-1.5 h-1.5 rounded-full bg-green-600"
+          ></span>
+        </div>
+      </app-button>
+      <app-button class="btn--rounded">
+        <div class="relative flex-center-center">
+          <img src="./assets/img/images/avatar.jpg" alt="icon" />
+        </div>
+      </app-button>
+    </div>
+  </div>
+</header>

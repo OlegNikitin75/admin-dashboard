@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background: #efeefe;
+  height: 100vh;
+  @apply flex-center-center;
+}
+
+button,
+input {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}

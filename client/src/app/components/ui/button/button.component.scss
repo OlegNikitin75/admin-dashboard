@@ -1,0 +1,9 @@
+button {
+  @apply hover:scale-90 transition-all;
+}
+
+.btn {
+  &--rounded {
+    @apply block rounded-full w-10 h-10 overflow-hidden bg-white shadow-xl shadow-gray-400;
+  }
+}

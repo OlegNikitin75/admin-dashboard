@@ -1,0 +1,10 @@
+.header {
+  @apply border-b-2 border-b-white;
+  &__inner {
+    @apply py-5;
+  }
+
+  .logo {
+    @apply text-2xl font-medium;
+  }
+}
