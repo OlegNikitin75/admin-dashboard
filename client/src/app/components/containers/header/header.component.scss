@@ -1,5 +1,5 @@
 .header {
-  @apply border-b-2 border-b-white;
+  @apply relative border-b-2 border-b-white px-5;
   &__inner {
     @apply py-5;
   }

@@ -1,9 +1,38 @@
 button {
-  @apply hover:scale-90 transition-all;
 }
 
 .btn {
   &--rounded {
-    @apply block rounded-full w-10 h-10 overflow-hidden bg-white shadow-xl shadow-gray-400;
+    @apply block rounded-full w-10 h-10 overflow-hidden bg-white shadow-xl shadow-gray-400  transition-all;
+    &:hover {
+      @apply hover:scale-90;
+    }
+  }
+
+  &--large {
+    @apply w-full h-10 px-3 text-white rounded transition-all;
+    &-green {
+      @apply bg-teal-600;
+
+      &:hover {
+        @apply bg-teal-700;
+      }
+    }
+
+    &-blue {
+      background: #5f49b5;
+
+      &:hover {
+        background: #4c3b90;
+      }
+    }
+
+    &-transparent {
+      @apply bg-transparent text-teal-600 border-[1px] border-teal-600;
+
+      &:hover {
+        @apply text-teal-800;
+      }
+    }
   }
 }

@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#e9ecfb'
+        primary: '#efeefe'
       },
       transitionTimingFunction: {
         DEFAULT: 'ease-in-out'

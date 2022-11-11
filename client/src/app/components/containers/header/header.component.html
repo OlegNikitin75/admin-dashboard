@@ -18,7 +18,7 @@
 
     <div class="user-box flex-center-between gap-5">
       <app-search></app-search>
-      <app-button class="btn--rounded">
+      <app-button [button]="{ class: 'btn--rounded', type: 'button' }">
         <div class="relative flex-center-center">
           <img src="./assets/img/icons/bell.svg" alt="icon" />
           <span
@@ -27,7 +27,7 @@
           ></span>
         </div>
       </app-button>
-      <app-button class="btn--rounded">
+      <app-button [button]="{ class: 'btn--rounded', type: 'button' }">
         <div class="relative flex-center-center">
           <img src="./assets/img/icons/chat-dots.svg" alt="icon" />
           <span
@@ -36,11 +36,105 @@
           ></span>
         </div>
       </app-button>
-      <app-button class="btn--rounded">
+      <app-button
+        (click)="handleClick()"
+        [button]="{ class: 'btn--rounded', type: 'button' }"
+      >
         <div class="relative flex-center-center">
-          <img src="./assets/img/images/avatar.jpg" alt="icon" />
+          <ng-container *ngIf="isAuth">
+            <img src="./assets/img/images/avatar.jpg" alt="icon" />
+          </ng-container>
+          <ng-container *ngIf="!isAuth">
+            <img src="./assets/img/icons/person-circle.svg" alt="icon" />
+          </ng-container>
         </div>
       </app-button>
     </div>
   </div>
+  <app-form *ngIf="isVisibleFormLogin">
+    <ng-container *ngIf="!isAuth">
+      <app-field
+        class="block mb-3"
+        [field]="{
+          class: 'field-input',
+          placeholder: 'Электронная почта',
+          type: 'text',
+          id: 'useremail-login',
+          name: 'email',
+          required: true
+        }"
+      ></app-field>
+      <app-field
+        class="block mb-3"
+        [field]="{
+          class: 'field-input',
+          placeholder: 'Пароль',
+          type: 'password',
+          id: 'userpassword',
+          name: 'password',
+          required: true
+        }"
+      ></app-field>
+      <app-button
+        class="block mb-3"
+        [button]="{
+          class: 'btn--large  btn--large-green',
+          title: 'Войти',
+          type: 'button'
+        }"
+      ></app-button>
+      <app-button
+        (click)="handleClickReg($event)"
+        [button]="{
+          class: 'btn--large  btn--large-transparent',
+          title: 'Создать аккаунт',
+          type: 'button'
+        }"
+      ></app-button>
+    </ng-container>
+    <ng-container *ngIf="isAuth">
+      <app-button
+        [button]="{
+          class: 'btn--large  btn--large-blue',
+          title: 'Выйти',
+          type: 'submit'
+        }"
+      ></app-button>
+    </ng-container>
+  </app-form>
+  <app-form *ngIf="isVisibleFormReg">
+    <app-field
+      class="block mb-3"
+      [field]="{
+        class: 'field-input',
+        placeholder: 'Электронная почта',
+        type: 'text',
+        id: 'useremail-register',
+        name: 'email',
+        required: true
+      }"
+    ></app-field>
+    <app-button
+      (click)="handleContinueReg($event)"
+      [button]="{
+        class: 'btn--large  btn--large-blue',
+        title: 'Продолжить',
+        type: 'submit'
+      }"
+    ></app-button>
+  </app-form>
+  <app-form *ngIf="isVisibleMessage">
+    <h3 class="text-lg text-center mb-5 font-medium">
+      Письмо с паролем отправлено Вам на почту
+    </h3>
+    <app-button
+      (click)="handleClickLogin($event)"
+      class="block mb-3"
+      [button]="{
+        class: 'btn--large  btn--large-green',
+        title: 'Войти',
+        type: 'button'
+      }"
+    ></app-button>
+  </app-form>
 </header>

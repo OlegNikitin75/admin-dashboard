@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core'
+import { IButton } from '../../../models/interfaces/button.interface'
 
 @Component({
   selector: 'app-button',
@@ -7,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core'
 })
 export class ButtonComponent implements OnInit {
   @Input()
-  class: string | undefined
+  button: IButton
 
   constructor() {}
 

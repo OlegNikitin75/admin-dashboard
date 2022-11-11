@@ -6,9 +6,8 @@
 
 body {
   font-family: 'Ubuntu', sans-serif;
-  background: #efeefe;
   height: 100vh;
-  @apply flex-center-center;
+  @apply flex-center-center bg-primary;
 }
 
 button,
